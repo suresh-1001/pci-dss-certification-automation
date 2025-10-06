@@ -54,11 +54,25 @@ function Get-AdminGroup {
     try { (Get-LocalGroupMember -Group "Administrators" | Select-Object -ExpandProperty Name) } catch { @() }
   } else {
     $sudoers = @()
-    if (Test-Path "/etc/sudoers") {
-      $sudoers += (Get-Content /etc/sudoers | Where-Object {$_ -notmatch "^#" -and $_ -match "ALL=\(ALL\)"})
-    }
+    # Try /etc/sudoers (may require elevated privileges)
+    try {
+      if (Test-Path "/etc/sudoers") {
+        $sudoers += (Get-Content "/etc/sudoers" -ErrorAction Stop | Where-Object { $_ -notmatch "^#" -and $_ -match "ALL=\(ALL\)" })
+      }
+    } catch { }  # ignore permission errors
+
+    # Try drop-in files (often readable)
+    try {
+      Get-ChildItem "/etc/sudoers.d" -ErrorAction SilentlyContinue | ForEach-Object {
+        try {
+          $sudoers += (Get-Content $_.FullName -ErrorAction Stop | Where-Object { $_ -notmatch "^#" -and $_ -match "ALL=\(ALL\)" })
+        } catch { }
+      }
+    } catch { }
+
+    # Fallback: group database hints
     if (Test-Path "/etc/group") {
-      $sudoers += (Get-Content /etc/group | Where-Object {$_ -match "^sudo:" -or $_ -match "^wheel:"})
+      $sudoers += (Get-Content "/etc/group" | Where-Object { $_ -match "^(sudo|wheel):" })
     }
     $sudoers
   }
