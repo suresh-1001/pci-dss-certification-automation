@@ -81,3 +81,8 @@ python ./scripts/generate-report.py --control 8.1.1 --input ./examples/8.1.1 --o
 
 ## 📝 License
 MIT — see `LICENSE`.
+
+---
+
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+![Last commit](https://img.shields.io/github/last-commit/suresh-1001/pci-dss-certification-automation)
