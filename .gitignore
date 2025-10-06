@@ -1,0 +1,5 @@
+# Python / PowerShell build ignores
+__pycache__/
+*.pyc
+*.log
+.env
