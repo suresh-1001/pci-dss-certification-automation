@@ -22,6 +22,7 @@ Manual PCI DSS audit prep is slow, error-prone, and expensive. This repo shows h
 
 > ⚠️ **All examples use synthetic/redacted data.** Replace placeholders with your environment variables and scrub sensitive info before use.
 
+![PCI DSS 4.0.1 Certification Automation](diagrams/pci-401.png)
 ---
 
 ## ⚙️ Key Features
