@@ -1,0 +1,41 @@
+PCI_Control,PCI_Requirement_Title,SOC2_CC,SOC2_CC_Title,Description,Evidence_Type
+1.1.1,Network security controls documented and in place,CC6.6,Logical and Physical Access Controls — Network,Firewall and network segmentation policies protecting cardholder data environment,Firewall ruleset export + network diagram
+1.2.1,Network security control rulesets reviewed,CC6.6,Logical and Physical Access Controls — Network,Periodic review of inbound/outbound traffic rules,Firewall rule review log + change tickets
+1.3.1,Inbound traffic restricted to CDE,CC6.6,Logical and Physical Access Controls — Network,Only authorized traffic permitted into the cardholder data environment,Firewall policy + ACL export
+1.3.2,Outbound traffic restricted from CDE,CC6.6,Logical and Physical Access Controls — Network,Outbound connections from CDE limited to necessary business traffic,Firewall egress rules export
+2.1.1,System components configured securely,CC6.1,Logical and Physical Access Controls — Infrastructure,All system components use hardened baseline configurations,CIS benchmark scan results + config export
+2.2.1,System configuration standards documented,CC2.1,Communication and Information — Policies,Documented hardening standards for all system types in scope,Configuration standard documents
+2.3.1,Wireless environments secured,CC6.6,Logical and Physical Access Controls — Network,Wireless networks isolated from CDE; strong encryption enforced,Wireless config export + scan results
+3.1.1,Cardholder data retention policy in place,CC6.5,Logical and Physical Access Controls — Disposal,Data retention and disposal policies documented and enforced,Data retention policy + disposal logs
+3.3.1,SAD not stored after authorization,CC6.1,Logical and Physical Access Controls — Infrastructure,Sensitive authentication data purged post-authorization,Data flow diagram + storage scan results
+3.5.1,PAN protected wherever stored,CC6.1,Logical and Physical Access Controls — Infrastructure,Primary account numbers masked or encrypted at rest,Encryption configuration + data discovery scan
+4.2.1,PAN encrypted in transit,CC6.7,Logical and Physical Access Controls — Transmission,Strong cryptography used for all PAN transmission over open networks,TLS configuration export + certificate inventory
+5.2.1,Anti-malware deployed on all applicable systems,CC6.8,Logical and Physical Access Controls — Malicious Software,Anti-malware solution active and current on all in-scope systems,AV deployment report + definition update logs
+5.3.1,Anti-malware mechanisms maintained,CC6.8,Logical and Physical Access Controls — Malicious Software,Anti-malware cannot be disabled by users; periodic scans configured,AV policy config + scan schedule export
+6.2.1,Software development policies in place,CC8.1,Change Management,Secure SDLC policies covering all in-house developed software,SDLC policy document + code review records
+6.3.1,Security vulnerabilities identified and addressed,CC7.1,Systems Operations — Vulnerability Management,Vulnerability identification process covering all system components,Vulnerability scan results + remediation tracker
+6.4.1,Web-facing applications protected,CC6.6,Logical and Physical Access Controls — Network,WAF or code review process covering all public-facing web applications,WAF config or code review evidence
+7.1.1,Access control policies documented,CC6.2,Logical and Physical Access Controls — Access Provisioning,Policies defining need-to-know and least privilege access,Access control policy document
+7.2.1,Access to system components restricted,CC6.2,Logical and Physical Access Controls — Access Provisioning,User access limited to minimum necessary for job function,Access matrix + user role export
+7.3.1,Access control system enforced technically,CC6.3,Logical and Physical Access Controls — Access Removal,Technical controls enforce documented access policies,RBAC configuration export + Entra ID role report
+8.1.1,User identification and authentication policies,CC6.1,Logical and Physical Access Controls — Infrastructure,All users have unique IDs; policies define authentication requirements,Identity policy document
+8.2.1,All user accounts managed,CC6.2,Logical and Physical Access Controls — Access Provisioning,User account lifecycle managed from provisioning to termination,User account list + provisioning/termination records
+8.3.1,MFA required for all access into CDE,CC6.1,Logical and Physical Access Controls — Infrastructure,Multi-factor authentication enforced for all CDE access,MFA enforcement policy + Entra ID conditional access export
+8.3.6,Passwords meet complexity requirements,CC6.1,Logical and Physical Access Controls — Infrastructure,Password length and complexity requirements meet PCI DSS minimums,Password policy config export
+8.6.1,System and application accounts managed,CC6.2,Logical and Physical Access Controls — Access Provisioning,Service accounts documented; interactive login restricted,Service account inventory + policy
+9.1.1,Physical access controls to CDE,CC6.4,Logical and Physical Access Controls — Physical,Physical access to CDE restricted to authorized personnel only,Physical access log + badge/CCTV evidence
+9.4.1,Media with cardholder data protected,CC6.5,Logical and Physical Access Controls — Disposal,Physical and electronic media containing CHD secured and tracked,Media inventory + handling log
+10.2.1,Audit logs implemented for CDE systems,CC7.2,Systems Operations — Monitoring,Audit logging enabled for all in-scope system components,Log configuration export + sample log files
+10.3.1,Audit logs protected from destruction,CC7.2,Systems Operations — Monitoring,Log integrity controls prevent unauthorized modification or deletion,Log forwarding config + SIEM setup evidence
+10.4.1,Audit logs reviewed regularly,CC7.2,Systems Operations — Monitoring,Daily log review process with documented escalation path,Log review procedure + review records
+10.5.1,Audit log history retained,CC7.2,Systems Operations — Monitoring,Logs retained for at least 12 months; 3 months immediately available,Log retention policy + storage config
+11.3.1,Internal vulnerability scans performed,CC7.1,Systems Operations — Vulnerability Management,Quarterly internal vulnerability scans conducted on all in-scope systems,Internal scan results (quarterly)
+11.3.2,External vulnerability scans performed by ASV,CC7.1,Systems Operations — Vulnerability Management,Quarterly external scans by an Approved Scanning Vendor (ASV),ASV scan reports (quarterly)
+11.4.1,Penetration testing methodology documented,CC7.1,Systems Operations — Vulnerability Management,Annual penetration test covering network and application layers,Pen test report + remediation evidence
+11.5.1,Intrusion detection/prevention in place,CC7.2,Systems Operations — Monitoring,IDS/IPS deployed on network perimeter and critical internal segments,IDS/IPS config + alert log sample
+12.1.1,Information security policy maintained,CC2.1,Communication and Information — Policies,Comprehensive information security policy reviewed annually,IS policy document + review/approval record
+12.3.1,Risk assessment process documented,CC3.1,Risk Assessment,Annual risk assessment process identifying threats to CHD,Risk assessment report
+12.5.1,PCI DSS scope documented and validated,CC2.2,Communication and Information — Objectives,Cardholder data environment scoped and validated at least annually,Scope diagram + data flow diagram
+12.6.1,Security awareness program in place,CC1.4,Control Environment — Commitment to Competence,Annual security awareness training for all personnel,Training completion records
+12.8.1,Third-party service providers managed,CC9.2,Risk Mitigation — Vendor Management,TPSP inventory maintained; compliance status tracked,TPSP list + compliance attestations (AOC)
+12.10.1,Incident response plan documented,CC7.3,Systems Operations — Incident Response,Documented IR plan covering detection response containment and recovery,IR plan document + tabletop exercise records
